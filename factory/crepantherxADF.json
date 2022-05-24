@@ -1,0 +1,9 @@
+{
+	"name": "crepantherxADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "751ddf6e-50bd-4a05-88be-30d1fecf7e31",
+		"tenantId": "80ef68b6-727d-483e-9ce7-b09a71f1efd6"
+	}
+}
