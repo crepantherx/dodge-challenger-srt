@@ -1,0 +1,27 @@
+{
+	"name": "dodge_challeger_srt_azure_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dodge_challenger_srt_azure_sa",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"landing_folder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().landing_folder",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			}
+		},
+		"schema": {}
+	}
+}
