@@ -1,0 +1,47 @@
+{
+	"name": "dodge_challenger_srt_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL_dodge_challenger_srt",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VehicleID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "lattitude",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "longitude",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "temperature",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "speed",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dodge"
+		}
+	}
+}

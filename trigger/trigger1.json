@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "dodge-challenger-srt-ToSQL",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/staging/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/ede33a9d-ee9d-4f75-971b-e040619fc0b2/resourceGroups/crepantherx/providers/Microsoft.Storage/storageAccounts/crepantherxsa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
