@@ -1,0 +1,27 @@
+{
+	"name": "s3",
+	"properties": {
+		"annotations": [],
+		"type": "AmazonS3",
+		"typeProperties": {
+			"serviceUrl": "",
+			"accessKeyId": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "dodge_challenger_srt_s3",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "aws-crepantherx-s3-iot-dodge-challenge-rsrt-key"
+			},
+			"secretAccessKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "dodge_challenger_srt_s3",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "aws-crepantherx-s3-iot-dodge-challenge-rsrt-val"
+			},
+			"authenticationType": "AccessKey"
+		}
+	}
+}
