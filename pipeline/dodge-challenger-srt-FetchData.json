@@ -53,7 +53,13 @@
 				"outputs": [
 					{
 						"referenceName": "dodge_challeger_srt_azure_JSON",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"landing_folder": {
+								"value": "@concat('input',formatDateTime(utcnow(), 'yyyy'), '/',formatDateTime(utcnow(), 'MM'), '/',formatDateTime(utcnow(), 'dd'), '/')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
