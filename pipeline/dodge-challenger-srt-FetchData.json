@@ -20,6 +20,7 @@
 						"storeSettings": {
 							"type": "AmazonS3ReadSettings",
 							"recursive": true,
+							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
