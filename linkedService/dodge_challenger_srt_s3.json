@@ -1,0 +1,10 @@
+{
+	"name": "dodge_challenger_srt_s3",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://crepantherx-sec.vault.azure.net/"
+		}
+	}
+}
