@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "crepantherxADF"
+		},
+		"SQL_dodge_challenger_srt_connectionString": {
+			"value": ""
+		},
+		"dodge_challenger_srt_azure_sa_accountKey": {
+			"value": ""
+		},
+		"dodge_challenger_srt_azure_sa_properties_typeProperties_url": {
+			"value": "https://crepantherxsa.dfs.core.windows.net"
+		},
+		"dodge_challenger_srt_s3_properties_typeProperties_baseUrl": {
+			"value": "https://crepantherx-sec.vault.azure.net/"
+		},
+		"s3_properties_typeProperties_accessKeyId": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "dodge_challenger_srt_s3",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "aws-crepantherx-s3-iot-dodge-challenge-rsrt-key"
+			}
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/ede33a9d-ee9d-4f75-971b-e040619fc0b2/resourceGroups/crepantherx/providers/Microsoft.Storage/storageAccounts/crepantherxsa"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "crepantherxADF"
+		},
+		"SQL_dodge_challenger_srt_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQL_dodge_challenger_srt'"
+		},
+		"dodge_challenger_srt_azure_sa_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dodge_challenger_srt_azure_sa'"
+		},
+		"dodge_challenger_srt_azure_sa_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://crepantherxsa.dfs.core.windows.net"
+		},
+		"dodge_challenger_srt_s3_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://crepantherx-sec.vault.azure.net/"
+		},
+		"s3_properties_typeProperties_accessKeyId": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "dodge_challenger_srt_s3",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "aws-crepantherx-s3-iot-dodge-challenge-rsrt-key"
+			}
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/ede33a9d-ee9d-4f75-971b-e040619fc0b2/resourceGroups/crepantherx/providers/Microsoft.Storage/storageAccounts/crepantherxsa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "crepantherxADF_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SQL_dodge_challenger_srt_connectionString": {
+						"value": "[parameters('SQL_dodge_challenger_srt_connectionString')]"
+					},
+					"dodge_challenger_srt_azure_sa_accountKey": {
+						"value": "[parameters('dodge_challenger_srt_azure_sa_accountKey')]"
+					},
+					"dodge_challenger_srt_azure_sa_properties_typeProperties_url": {
+						"value": "[parameters('dodge_challenger_srt_azure_sa_properties_typeProperties_url')]"
+					},
+					"dodge_challenger_srt_s3_properties_typeProperties_baseUrl": {
+						"value": "[parameters('dodge_challenger_srt_s3_properties_typeProperties_baseUrl')]"
+					},
+					"s3_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('s3_properties_typeProperties_accessKeyId')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
